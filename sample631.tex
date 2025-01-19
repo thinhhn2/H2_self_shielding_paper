@@ -28,7 +28,7 @@
 %% using aastex version 6.3
 \documentclass[linenumbers, twocolumn]{aastex631}
 %\usepackage[utf8]{vietnam}
-\usepackage[T5]{fontenc}
+%\usepackage[T5]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{svg}
 \usepackage{amsmath}
@@ -296,6 +296,7 @@ Through modeling a semi-infinite, static slab of gas irradiated on one surface, 
 
 However, there are limitations to the applicability of approximate treatments in various test problems when compared to the accurate full ray-tracing calculation. In the context of photodissociation of $H_{2}$ in protogalaxies and direct-collapse black hole formation, \cite{Wolcott-Green+2011} show that the Sobolev length, the density gradient, and the six-ray approximation methods overestimate the $H_{2}$ shielding degree by an order of magnitude in low-density regions of $n < 10^{4} cm^{-3}$. Also in the context of direct-collapse black hole, when comparing with their non-local approximation detailed in \cite{Hartwig+2015}, \cite{Hartwig+2015b} find that the Jeans approach returns a critical flux value $J_{crit}$ - the lowest flux required for a halo with virial temperature above $10^{4} K$ to collapse to a supermassive black hole seed - two times larger than the non-local approximation, leading to a disparity in the predicted number density of black hole seeds. \cite{Greif+2014} investigate the collapse of primordial star-forming clouds with an accurate $H_{2}$ line emission model and notice that the Sobolev method brings about a thermal instability for the collapsing cloud and an order-of-magnitude overestimation of the escape fraction for high optical depth. When evaluating the triggered Population III star formation at the limb of the HII region, \cite{Chiaki+2023a} find that while the density-gradient method matches well with the ray-tracing method, the Jeans length approximation results in an overestimation of the number of the Population III stars at the front of the shock wave. The authors suggest that this is because the thickness of the $H_{2}$ ring of the shock front is typically smaller than the Jeans length, and thus the local approximation is inappropriate. In their large-scale galactic discs simulations, \cite{Safranek-Shrader+2017} notices that the Sobolev method underpredicts the $H_{2}$ abundance in the disc by a factor of 5, while the six-ray and the Jeans length methods perform better, which is contrary to the findings that Jeans length method is ineffective in previous studies. Thus, the validity of these approximation methods is highly problem-dependent and they cannot be used as a general substitution for the full ray-tracing calculation. 
 
+
 \textbf{A simulation that uses approximated H2 self-shielding: COLDSIM, Maio et al 2021}
 
 In this paper, we expand the investigation by comparing these approximation methods with the detailed ray-tracing methods, this time in the context of \textbf{star formation during the Reionization period}. This will help further examine and inform the community about the applicability of these approximations in modeling $H_{2}$ in different contexts. In Section ..., we will describe our simulation and the implemented $H_{2}$ self-shielding models. Section ... analyzes the effect of these models on star formation and galaxy evolution during Reionization. Last but not least, in Section ..., we discuss the implications of the findings and summarize the paper. \\
@@ -423,7 +424,6 @@ Sub-section~\ref{subsect:effect_on_sf} explores how two treatments of modeling $
 
 \subsubsection{Effect on the ISM and CGM}
 
-\textbf{Need to update the phase plots with halotree version 1088 + use the last timestep + include halo mass in the plot + Increase the fontsize}
 
 \textbf{Make a big figure showing all the halo pairs projection plot at the last snapshot.}
 
