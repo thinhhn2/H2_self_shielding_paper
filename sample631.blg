@@ -4,44 +4,44 @@ The top-level auxiliary file: sample631.aux
 The style file: aasjournal.bst
 Database file #1: sample631.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 35 entries,
+You've used 36 entries,
             3168 wiz_defined-function locations,
-            924 strings with 17932 characters,
-and the built_in function-call counts, 19295 in all, are:
-= -- 1339
-> -- 1958
+            932 strings with 18717 characters,
+and the built_in function-call counts, 20034 in all, are:
+= -- 1374
+> -- 2062
 < -- 16
-+ -- 656
-- -- 684
-* -- 1957
-:= -- 3709
-add.period$ -- 35
-call.type$ -- 35
-change.case$ -- 204
-chr.to.int$ -- 33
-cite$ -- 35
-duplicate$ -- 585
-empty$ -- 949
-format.name$ -- 740
-if$ -- 3719
++ -- 690
+- -- 720
+* -- 2046
+:= -- 3862
+add.period$ -- 36
+call.type$ -- 36
+change.case$ -- 208
+chr.to.int$ -- 34
+cite$ -- 36
+duplicate$ -- 602
+empty$ -- 975
+format.name$ -- 777
+if$ -- 3853
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 35
-newline$ -- 113
-num.names$ -- 140
-pop$ -- 211
+missing$ -- 36
+newline$ -- 116
+num.names$ -- 144
+pop$ -- 215
 preamble$ -- 1
-purify$ -- 204
+purify$ -- 208
 quote$ -- 0
-skip$ -- 487
+skip$ -- 500
 stack$ -- 0
-substring$ -- 601
+substring$ -- 615
 swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 315
+type$ -- 324
 warning$ -- 0
-while$ -- 136
+while$ -- 139
 width$ -- 0
-write$ -- 391
+write$ -- 402
