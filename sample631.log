@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2025.1.19)  20 JAN 2025 16:39
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2025.1.19)  21 JAN 2025 13:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -673,19 +673,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [3]
 File: EarlyRe/fsh_comparison_ver2.png Graphic file (type bmp)
 <EarlyRe/fsh_comparison_ver2.png>
- [4]
-
-LaTeX Warning: A float is stuck (cannot be placed) on input line 371.
-
-
-LaTeX Warning: A float is stuck (cannot be placed) on input line 371.
-
-
-Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
-
+ [4] [5]
 File: EarlyRe/h2_frac_gasmass_distribution_EarlyRe_shinbad.png Graphic file (ty
 pe bmp)
 <EarlyRe/h2_frac_gasmass_distribution_EarlyRe_shinbad.png>
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -694,29 +686,7 @@ pe bmp)
 <EarlyRe/stellarmass_totalmass_EarlyRe_starassignment.png>
 File: EarlyRe/number_of_halo_wstars.png Graphic file (type bmp)
 <EarlyRe/number_of_halo_wstars.png>
-[5]
-
-LaTeX Warning: A float is stuck (cannot be placed) on input line 408.
-
-
-LaTeX Warning: A float is stuck (cannot be placed) on input line 408.
-
-
-Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
-
 [6] [7]
-File: EarlyRe/Galaxy_CGM_phaseplot_Halos_0-0_Snapshot_211_ver1088.png Graphic f
-ile (type bmp)
-<EarlyRe/Galaxy_CGM_phaseplot_Halos_0-0_Snapshot_211_ver1088.png>
-File: EarlyRe/Galaxy_CGM_H2phaseplot_Halos_0-0_Snapshot_211_ver1088.png Graphic
- file (type bmp)
-<EarlyRe/Galaxy_CGM_H2phaseplot_Halos_0-0_Snapshot_211_ver1088.png>
-File: EarlyRe/Galaxy_CGM_phaseplot_Halos_18-19_Snapshot_211_ver1088.png Graphic
- file (type bmp)
-<EarlyRe/Galaxy_CGM_phaseplot_Halos_18-19_Snapshot_211_ver1088.png>
-File: EarlyRe/Galaxy_CGM_H2phaseplot_Halos_18-19_Snapshot_211_ver1088.png Graph
-ic file (type bmp)
-<EarlyRe/Galaxy_CGM_H2phaseplot_Halos_18-19_Snapshot_211_ver1088.png>
 File: EarlyRe/Halo0_property_comparison_Snapshot_194.png Graphic file (type bmp
 )
 <EarlyRe/Halo0_property_comparison_Snapshot_194.png>
@@ -729,38 +699,50 @@ mp)
 File: EarlyRe/Halo3-3_property_evolution_comparison.png Graphic file (type bmp)
 
 <EarlyRe/Halo3-3_property_evolution_comparison.png>
+File: EarlyRe/Galaxy_CGM_phaseplot_Halos_0-0_Snapshot_211_ver1088.png Graphic f
+ile (type bmp)
+<EarlyRe/Galaxy_CGM_phaseplot_Halos_0-0_Snapshot_211_ver1088.png>
+File: EarlyRe/Galaxy_CGM_H2phaseplot_Halos_0-0_Snapshot_211_ver1088.png Graphic
+ file (type bmp)
+<EarlyRe/Galaxy_CGM_H2phaseplot_Halos_0-0_Snapshot_211_ver1088.png>
+File: EarlyRe/Galaxy_CGM_phaseplot_Halos_18-19_Snapshot_211_ver1088.png Graphic
+ file (type bmp)
+<EarlyRe/Galaxy_CGM_phaseplot_Halos_18-19_Snapshot_211_ver1088.png>
+File: EarlyRe/Galaxy_CGM_H2phaseplot_Halos_18-19_Snapshot_211_ver1088.png Graph
+ic file (type bmp)
+<EarlyRe/Galaxy_CGM_H2phaseplot_Halos_18-19_Snapshot_211_ver1088.png>
 File: EarlyRe/gas_star_surface_density_multiple.png Graphic file (type bmp)
 <EarlyRe/gas_star_surface_density_multiple.png>
 File: EarlyRe/neutralHfraction_comparison_multiple.png Graphic file (type bmp)
 <EarlyRe/neutralHfraction_comparison_multiple.png>
 File: EarlyRe/neutralHfraction_evolution.png Graphic file (type bmp)
 <EarlyRe/neutralHfraction_evolution.png>
- (./sample631.bbl [8] [9]
+ (./sample631.bbl [8] [9] [10] [11]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 76.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 209.
 
-[10]
+[12]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 76.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 209.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
-[11]) [12] [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 607.
+) [13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 612.
  (./sample631.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 607.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 607.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 612.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 612.
 Package rerunfilecheck Info: File `sample631.out' has not changed.
-(rerunfilecheck)             Checksum: 60F0BD5A2E19766B89852BFBFED8FE1B;1342.
+(rerunfilecheck)             Checksum: 798B43C2A82630A829DB5DE215678E4D;1369.
  ) 
 Here is how much of TeX's memory you used:
- 14008 strings out of 481772
- 201318 string characters out of 5936451
- 562038 words of memory out of 5000000
- 30772 multiletter control sequences out of 15000+600000
+ 14009 strings out of 481772
+ 201339 string characters out of 5936451
+ 566715 words of memory out of 5000000
+ 30773 multiletter control sequences out of 15000+600000
  540424 words of font info for 76 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,12n,45p,2781b,558s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,45p,2781b,572s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on sample631.pdf (13 pages).

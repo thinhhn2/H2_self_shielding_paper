@@ -348,18 +348,18 @@ The Sobolev-like treatment is a local approximation in which the number density 
 \end{equation}
 The approximation is enabled by setting the ENZO parameters \texttt{RadiativeTransferOpticallyThinH2 = 1} and \texttt{RadiationShield = 2}.
 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.95\columnwidth]{EarlyRe/fsh_comparison_ver2.png}
+	\caption{The comparison between the self-shielding factor between the \textit{EarlyRe-ray} and the \textit{EarlyRe-apx} simulation, evaluated at $z$ = 10.9. Two gas cells with the highest gas density and highest gas density gradients are chosen in 31 halos in different mass range to evaluate the self-shielding factors. (Top) The relationship between the self-shielding factors calculated by the Sobolev-like approximation model and the ray-tracing model, colored by the cell's gas density (top left) and the host halo's mass (top right). (Bottom) The ratio between the approximated and the ray-traced self-shielding factors is plotted as a function of gas density. The Sobolev-like approximation tends to overestimate the amount of $H_{2}$ self-shielding in the high gas density regime and underestimate it in the low gas density regime.}
+	\label{fig:fsh_comparison}
+\end{figure}
+
 Figure~\ref{fig:fsh_comparison} compares the self-shielding factor $f_{sh}$ between the ray-tracing model and the Sobolev-like approximation model. At the time step corresponding to z = 10.9, we select 31 halos that contain stars or overlap with another halo that contains stars. For each halo, we select two gas cells to evaluate the self-shielding factor: (1) the gas cell with the highest gas density, and (2) the gas cell with the highest gas density gradient. Each scatter point in Figure~\ref{fig:fsh_comparison} represents a selected gas cell. In the approximation model, the self-shielding factor of a gas cell is calculated using Equations~\ref{eq:self_shielding_factor_eq} and \ref{eq:NH2_approximation}. For the ray-tracing model, since the simulation output does not store the photodissociation rate calculation, we need to re-compute the self-shieling factor using Equation~\ref{eq:self_shielding_factor_eq} with an attenuated LW flux-weighted average column density. The LW flux from each star to a selected gas cell is calculated as follows. Firstly, the intrinsic spectrum of a star particle is generated using the Flexible Stellar Population Synthesis (fsps) with the age and metallicity of the star particle as inputs. We assume an initial mass function from \cite{Dave+2008} evaluated at z = 0, and we use the MIST isochrone library and MILES spectral library to generate the spectra. \textbf{may cite Susie's paper here or ask her for more information}. Then, we calculate the attenuation by including both scattering and absorption due to H/He and metals \textbf{Ask Kirk to include how the absorption and scatterings are computed}. With the scattering and absorption coefficients, we can compute the total optical depth and then the attenuation of the stellar spectrum from the source to the target gas cell. Lastly, we calculate the attenuated flux of each source to the gas cell, compute the LW flux-weighted average $H_{2}$ column density, and get the self-shielding factor from the ray-tracing model. It is important to note that we only include stars within the halo's virial radius to estimate the flux-weighted average $H_{2}$ density because stars outside the radius are too far from the selected gas cell to contribute considerably to the total flux at the selected gas cell. 
 
 Figure~\ref{fig:fsh_comparison} demonstrates a clear disparity in the $f_{sh}$ value between EarlyRe-apx and EarlyRe-ray. In particular, the approximation model tends to overestimate the amount of shielding for cells with a gas density larger than $10^{-20} g/cm^3$ by up to 1 dex. On the other hand, diffuse gas is subjected to underestimated $H_{2}$ self-shielding when the Sobolev-like approximation model is used. For highly diffuse gas, this underestimation can be up to 3-4 dex. This connection between gas density and $f_{sh}$ implies a mass-dependent effect of the self-shielding approximation model on halos. The top right subfigure of Figure~\ref{fig:fsh_comparison} shows that larger halos ($M_{\text{halo}} > 10^{9.5} M_{\odot}$) have their molecular cloud region over-shielded in the approximation model because the gas is denser. On the other hand, the molecular clouds in small halos ($M_{\text{halo}} < 10^{8.5} M_{\odot}$) are under-shielded against LW radiation when using the Sobolev-like approximation. In some cases, the approximation returns no shielding effect even though those gas cells are still weakly shielded ($f_{sh} \approx 10^{-3}$ when ray-tracing is utilized. Only molecular gas clouds in halos whose mass is about $10_{9} M_\odot$ are well modeled in the approximation model. The significance of this effect on star formation will be explored in Section~\ref{subsect:effect_on_sf}.
 
 \textbf{Maybe a comparison in terms of the time run between the two methods}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.95\columnwidth]{EarlyRe/fsh_comparison_ver2.png}
-    \caption{The comparison between the self-shielding factor between the \textit{EarlyRe-ray} and the \textit{EarlyRe-apx} simulation, evaluated at $z$ = 10.9. Two gas cells with the highest gas density and highest gas density gradients are chosen in 31 halos in different mass range to evaluate the self-shielding factors. (Top) The relationship between the self-shielding factors calculated by the Sobolev-like approximation model and the ray-tracing model, colored by the cell's gas density (top left) and the host halo's mass (top right). (Bottom) The ratio between the approximated and the ray-traced self-shielding factors is plotted as a function of gas density. The Sobolev-like approximation tends to overestimate the amount of $H_{2}$ self-shielding in the high gas density regime and underestimate it in the low gas density regime.}
-    \label{fig:fsh_comparison}
-\end{figure}
 
 \subsection{Cross-matching halos}
 \label{subsect:cross-matching_halos}
@@ -379,6 +379,12 @@ We uniquely assign each star particle in the simulation to one dark matter halo 
 Even though stars do not generally leave a halo's potential well for isolated halos, the behavior becomes more complex during halo-halo interaction as stripping can occur and stars can be lost from one halo to another \citep{Kannan+2015}. Therefore, the second step of our process is to address this shortcoming of the first step's assumption and to refine the star assignment result. In this step, we validate the output from the first step and check whether a star remains in its assigned halo's virial radius throughout its lifetime. If a star escapes the virial radius of its originally assigned halo, we assign that star to a new halo under two conditions: (1) the star's position must be within the new halo's virial radius and (2) the star's total orbital energy with respect to the new halo must be negative. Similar to the first step, if a star is located inside multiple potential new halos, we assign that star to the halo with the lowest negative orbital energy. If either Condition (1) or (2) fails at a certain timestep, this suggests that the star is stripped out of the potential well of all halos and thus we remove that star from the halo assignment process of that time step. 
 
 Once each star particle is uniquely associated with one halo, we calculate a halo's stellar mass and SFR exclusively based on its member star particles. This gravitational unbinding of star particles guarantees that each halo's stellar mass profile are not overlap and independent of each other. 
+
+\subsubsection{Defining ISM, CGM, and IGM}
+
+The boundary of the interstellar medium (ISM), the circumgalactic medium (CGM), and the intergalatic medium (IGM) region in our analysis is defined as follows. The ISM region (or the boundary of a galaxy) starts from the galaxy's center of mass to $R_{\mathrm{bary}, 2000}$, which is the radius enclosing a baryonic (gas and stars) mass density 2000 times the universe's critical mass density at a certain redshift. Even though there are multiple other definition of the boundary of galaxy in literature, such as using a fixed fraction of the virial radius, a fixed physical radius, or a radius that is scaled with mass or surface brightness (see \citealp{Stevens+2014} for a summary of these techniques), our over-density approach helps define the galaxy more robustly and more physically because it is redshift and density dependent. It also helps better define the galaxy during a close galaxy interaction when a half-mass radius or half-light radius approach may fail as another galaxy is in the target galaxy's virial radius. Depending on the redshift and the galaxy's compactness, $R_{\mathrm{bary}, 2000}$ typically ranges from 0.15 to 0.25 times the halo's virial radius, which falls in the same range as other galaxy's aperture definitions in cosmological simulations \citep{Stevens+2014}. The CGM starts from $R_{\mathrm{bary}, 2000}$ to $R_{\mathrm{halo,vir}}$, and the IGM is the region outside of the virial radius of all halos.
+
+Also, it is important to note that the baryonic center of mass does not always coincide with the halo's center of mass. Thus, in some cases, we shift the virial region to be centered on the gas and stellar mass instead of the dark matter mass; however, this shift is not large and does not affect our interpretation.    
  
 \section{Results}
 
@@ -393,6 +399,7 @@ Once each star particle is uniquely associated with one halo, we calculate a hal
 \end{figure}
 
 Because the column density approximation model directly concerns the calculation of the molecular hydrogen density, we first investigate the amount of $H_{2}$ in the ray tracing and approximation treatment. Figure~\ref{fig:H2_frac_EarlyRe} shows the $H_{2}$ fraction ($f_{H_{2}}$), which is the ratio between the $H_{2}$ mass with the total gas mass, as a function of the total halo mass in three snapshots, one at the time where star particles first appear in the simulations (z $\approx$ 17.49), one at the time step in the middle of the simulation run (z $\approx$ 13.32), and one being the last time step of the run (z $\approx$ 10.9). Each halo in the snapshot is represented by a scatter point, the line represents the running average of each total mass bin, and the shaded region around the line is the standard deviation of the scatter points within each mass bin. The contour plots represent the distribution of the halos in the $M_{\text{gas}} - M_{\text{total}}$ space. According to Figure~\ref{fig:H2_frac_EarlyRe}, both EarlyRe-ray and Early-apx simulations have similar gas mass distribution across all timesteps, showing $f_{H_{2}}$ represents the amount of $H_{2}$ in the halos. However, $f_{H_{2}}$ shows a notable difference between the two radiative transfer treatments, especially at the later time step and in the lower-halo-mass regime. For halo mass smaller than $10^{8} M_\odot$, the $f_{H_{2}}$ in the ray-tracing treatment is larger than that of the Sobolev-like approximation treatment by 3 to 6 dex. This difference grows larger as the simulation evolves, reaching up to 12 dex at the last time step for small halos. The EarlyRe-ray simulation also develops a lower limit for $f_{H_{2}}$ of around $10^{-5}$, whereas the $f_{H_{2}}$ is allowed to reach much further value in the EarlyRe-apx simulation. This shows that the ray-tracing treatment models the self-shielding effect much better and thus helps preserve more molecular hydrogen in the halos. As pointed out in Figure~\ref{fig:fsh_comparison}, the approximation treatment considerably underestimates $H_{2}$ self-shielding in a low gas density regime and molecular hydrogen to get photodissociated more easily, inferring that smaller halos are the most susceptible to the choice of the model. At a higher mass range, the difference in $f_{H_{2}}$ between the two models gradually diminishes. This is reasonable because larger halos have deeper gravitational potential well and have more dense cool gas regions where $H_{2}$ exists. In these regions, the approximation model matches well with the ray-tracing model (as shown in Figure~\ref{fig:fsh_comparison}), leading to an agreement of $f_{H_{2}}$ between the two runs. 
+
 \begin{figure*}
     \centering
     \includegraphics[width=0.95\textwidth]{EarlyRe/stellarmass_totalmass_EarlyRe_starassignment.png}
@@ -416,15 +423,27 @@ Another difference between \textit{EarlyRe-ray} and \textit{EarlyRe-apx} is the 
 
 %This result gives us a more detailed look at the disparity of $H_{2}$ when using the ray-tracing scheme and the Sobolev-like approximation scheme and reaffirm the results from Figure~\ref{fig:H2_frac_EarlyRe}. The other eight matched halo pairs also show a similar pattern. Thus, for brevity, we do not show their phase plots.
 
+\subsection{Case study}
+
+\begin{figure*}
+	\gridline{\fig{EarlyRe/Halo0_property_comparison_Snapshot_194.png}{0.375\textwidth}{}
+		\fig{EarlyRe/Halo0-0_property_evolution_comparison.png}{0.615\textwidth}{}}
+	\caption{(Left) The gas density, $H_{2}$ density, temperature, metallicity, and stellar surface density projection plot of Halo 0 within one virial radius. The white circle represents the boundary of the galaxy, which is defined as the radius enclosing the baryonic density 2000 times larger than the critical density of the universe. (Right) The time evolution of different properties in Halo 0 between the \textit{EarlyRe-ray} and \textit{EarlyRe-apx} simulations.}
+	\label{fig:Halo0-0_comparison}
+\end{figure*}
+
+\begin{figure*}
+	\gridline{\fig{EarlyRe/Halo3-3_property_comparison_Snapshot_194.png}{0.375\textwidth}{}
+		\fig{EarlyRe/Halo3-3_property_evolution_comparison.png}{0.615\textwidth}{}}
+	\caption{Same as Figure~\ref{fig:Halo0-0_comparison}, but for another Halo.}
+	\label{fig:Halo3-3_comparison}
+\end{figure*}
+
+
 \subsection{Effect on the ISM, CGM, and IGM}
 
-Sub-section~\ref{subsect:effect_on_sf} explores how two treatments of modeling $H_{2}$ affect star formation in a halo as a whole. In this section, we more closely examine the effect of $H_{2}$ self-shielding modeling on the interstellar medium (ISM), the circumgalactic medium (CGM), and the intergalactic medium (IGM) to help further explain the previous observations we have on star formation. 
+Sub-section~\ref{subsect:effect_on_sf} explores how two treatments of modeling $H_{2}$ affect star formation in a halo as a whole. In this section, we more closely examine the effect of $H_{2}$ self-shielding modeling on the ISM, the CGM, and the IGM to help further explain the previous observations we have on star formation. 
 
-\subsubsection{Defining ISM, CGM, and IGM in cosmological simulation}
-
-The boundary of the ISM, CGM, and IGM region in our analysis is defined as follows. The ISM region starts from the galaxy's center of mass to $R_{\mathrm{bary}, 2000}$, which is the radius enclosing a baryonic (gas and stars) mass density 2000 times the universe's critical mass density at a certain redshift. The benefit of this approach is to help define the ISM more robustly and more physically because it is redshift and density dependent. \textbf{Search for papers that use similar approach}. Depending on the redshift and the galaxy's compactness, $R_{\mathrm{bary}, 2000}$ typically ranges from 0.15 to 0.25 times the halo's virial radius, which is the common ratio used to define a galaxy in a halo in cosmological simulations \citep{Strawn+2024} \textbf{add more citations here}. 
-
-Also, it is important to note that the baryonic center of mass does not always coincide with the halo's center of mass. Thus, in some cases, we shift the virial region to be centered on the gas and stellar mass instead of the dark matter mass; however, this shift is not large and does not affect our interpretation.    
 
 \subsubsection{Effect on the ISM and CGM}
 
@@ -444,20 +463,6 @@ Also, it is important to note that the baryonic center of mass does not always c
     \fig{EarlyRe/Galaxy_CGM_H2phaseplot_Halos_18-19_Snapshot_211_ver1088.png}{0.485\textwidth}{(b)}}
     \caption{Similar to Figure~\ref{fig:phaseplot_Halo0-0}, for a halo with mass $M_{\mathrm{halo}} = 7.1\times 10^{8} M_\odot$.}
     \label{fig:phaseplot_Halo18-19}
-\end{figure*}
-
-\begin{figure*}
-    \gridline{\fig{EarlyRe/Halo0_property_comparison_Snapshot_194.png}{0.375\textwidth}{}
-    \fig{EarlyRe/Halo0-0_property_evolution_comparison.png}{0.615\textwidth}{}}
-    \caption{(Left) The gas density, $H_{2}$ density, temperature, metallicity, and stellar surface density projection plot of Halo 0 within one virial radius. The white circle represents the boundary of the galaxy, which is defined as the radius enclosing the baryonic density 2000 times larger than the critical density of the universe. (Right) The time evolution of different properties in Halo 0 between the \textit{EarlyRe-ray} and \textit{EarlyRe-apx} simulations.}
-    \label{fig:Halo0-0_comparison}
-\end{figure*}
-
-\begin{figure*}
-    \gridline{\fig{EarlyRe/Halo3-3_property_comparison_Snapshot_194.png}{0.375\textwidth}{}
-    \fig{EarlyRe/Halo3-3_property_evolution_comparison.png}{0.615\textwidth}{}}
-    \caption{Same as Figure~\ref{fig:Halo0-0_comparison}, but for another Halo.}
-    \label{fig:Halo3-3_comparison}
 \end{figure*}
 
 
