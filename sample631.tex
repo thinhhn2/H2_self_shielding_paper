@@ -380,7 +380,7 @@ Even though stars do not generally leave a halo's potential well for isolated ha
 
 Once each star particle is uniquely associated with one halo, we calculate a halo's stellar mass and SFR exclusively based on its member star particles. This gravitational unbinding of star particles guarantees that each halo's stellar mass profile are not overlap and independent of each other. 
 
-\subsubsection{Defining ISM, CGM, and IGM}
+\subsection{Defining ISM, CGM, and IGM}
 
 The boundary of the interstellar medium (ISM), the circumgalactic medium (CGM), and the intergalatic medium (IGM) region in our analysis is defined as follows. The ISM region (or the boundary of a galaxy) starts from the galaxy's center of mass to $R_{\mathrm{bary}, 2000}$, which is the radius enclosing a baryonic (gas and stars) mass density 2000 times the universe's critical mass density at a certain redshift. Even though there are multiple other definition of the boundary of galaxy in literature, such as using a fixed fraction of the virial radius, a fixed physical radius, or a radius that is scaled with mass or surface brightness (see \citealp{Stevens+2014} for a summary of these techniques), our over-density approach helps define the galaxy more robustly and more physically because it is redshift and density dependent. It also helps better define the galaxy during a close galaxy interaction when a half-mass radius or half-light radius approach may fail as another galaxy is in the target galaxy's virial radius. Depending on the redshift and the galaxy's compactness, $R_{\mathrm{bary}, 2000}$ typically ranges from 0.15 to 0.25 times the halo's virial radius, which falls in the same range as other galaxy's aperture definitions in cosmological simulations \citep{Stevens+2014}. The CGM starts from $R_{\mathrm{bary}, 2000}$ to $R_{\mathrm{halo,vir}}$, and the IGM is the region outside of the virial radius of all halos.
 
@@ -425,27 +425,27 @@ Another difference between \textit{EarlyRe-ray} and \textit{EarlyRe-apx} is the 
 
 \subsection{Case study}
 
+In this section, we analyze the properties of two halos, one being the largest halo in the simulation and one having a halo mass of $X M_\odot$, which is in the mass range where the approximation in $H_{2}$ self-shielding fails to accurately model star formation, as suggested in Figure~\ref{fig:SFR_stellar_total_EarlyRe}. We match the halos between \textit{EarlyRe-ray} and \textit{EarlyRe-apx} using the procedure in Section~\ref{subsect:cross-matching_halos}. These two pairs of halos serve as examples to how the $H_{2}$ self-shielding modeling affects the galaxy properties. 
+
 \begin{figure*}
-	\gridline{\fig{EarlyRe/Halo0_property_comparison_Snapshot_194.png}{0.375\textwidth}{}
-		\fig{EarlyRe/Halo0-0_property_evolution_comparison.png}{0.615\textwidth}{}}
-	\caption{(Left) The gas density, $H_{2}$ density, temperature, metallicity, and stellar surface density projection plot of Halo 0 within one virial radius. The white circle represents the boundary of the galaxy, which is defined as the radius enclosing the baryonic density 2000 times larger than the critical density of the universe. (Right) The time evolution of different properties in Halo 0 between the \textit{EarlyRe-ray} and \textit{EarlyRe-apx} simulations.}
+	\gridline{\fig{EarlyRe/Halo0-0_property_comparison_Snapshot_211_Projection_x_ver1088.png}{0.375\textwidth}{}
+		\fig{EarlyRe/Halo0-0_property_evolution_comparison_ver1088.png}{0.615\textwidth}{}}
+	\caption{(Left) The gas density, $H_{2}$ density, temperature, metallicity, and stellar surface density projection plot of Halo 0 ($M_{\mathrm{halo}} \approx 1.3\times 10^{10} M_\odot$ at z = 10.89) within one virial radius. The white circle represents the boundary of the galaxy, which is defined as the radius enclosing the baryonic density 2000 times larger than the critical density of the universe. (Right) The time evolution of different properties in Halo 0 between the \textit{EarlyRe-ray} and \textit{EarlyRe-apx} simulations.}
 	\label{fig:Halo0-0_comparison}
 \end{figure*}
 
 \begin{figure*}
-	\gridline{\fig{EarlyRe/Halo3-3_property_comparison_Snapshot_194.png}{0.375\textwidth}{}
-		\fig{EarlyRe/Halo3-3_property_evolution_comparison.png}{0.615\textwidth}{}}
-	\caption{Same as Figure~\ref{fig:Halo0-0_comparison}, but for another Halo.}
-	\label{fig:Halo3-3_comparison}
+	\gridline{\fig{EarlyRe/Halo8-9_property_comparison_Snapshot_211_Projection_x_ver1088.png}{0.375\textwidth}{}
+		\fig{EarlyRe/Halo8-9_property_evolution_comparison_ver1088.png}{0.615\textwidth}{}}
+	\caption{Same as Figure~\ref{fig:Halo0-0_comparison}, but for another halo whose $M_{\mathrm{halo}} \approx 1.7\times 10^{9} M_\odot$ at z = 10.89.}
+	\label{fig:Halo8-9_comparison}
 \end{figure*}
 
 
-\subsection{Effect on the ISM, CGM, and IGM}
+\subsection{Effect on the ISM and CGM}
 
 Sub-section~\ref{subsect:effect_on_sf} explores how two treatments of modeling $H_{2}$ affect star formation in a halo as a whole. In this section, we more closely examine the effect of $H_{2}$ self-shielding modeling on the ISM, the CGM, and the IGM to help further explain the previous observations we have on star formation. 
 
-
-\subsubsection{Effect on the ISM and CGM}
 
 \textbf{Make a big figure showing all the halo pairs projection plot at the last snapshot.}
 
@@ -466,22 +466,18 @@ Sub-section~\ref{subsect:effect_on_sf} explores how two treatments of modeling $
 \end{figure*}
 
 
-\subsubsection{Effect on the IGM}
+\subsection{Effect on the IGM and reionization}
 
 \begin{figure*}
     \centering
-    \includegraphics[width=\textwidth]{EarlyRe/gas_star_surface_density_multiple.png}
-    \caption{The gas surface density, gas temperature, and stellar surface density between the \textit{EarlyRe-apx} and \textit{EarlyRe-ray} simulation.}
-    \label{fig:gas_star_surface_density_194}
+    \includegraphics[width=\textwidth]{EarlyRe/gas_surface_density_multiple_ver1088.png}
+    \caption{The gas surface density, gas temperature, and gas metallicity within the simulation's refined region between the \textit{EarlyRe-apx} and \textit{EarlyRe-ray}.}
+    \label{fig:gas_surface_density_wholebox}
 \end{figure*}
 
 \textit{For the radiative star cluster model and the Population III star model used in our simulation, their overdensity thresholds for a star particle to form are $10^{7}$ and $10^{6}$, respectively. At the time step where we evaluate the $f_{sh}$ ($z$ = 10.9), these overdensity thresholds correspond to a gas density threshold of $4.5\times 10^{-20}$ and $4.5\times 10^{-21}$. According to Figure~\ref{fig:fsh_comparison}, these thresholds lie in the regime where $f_{sh}$ is typically over-estimated in the approximation model. On the other hand, $H_{2}$ gas in the interstellar medium (ISM) of \textit{EarlyRe-apx} can be under-shielded.} 
 
 
-
-\subsection{Effect on reionization}
-Include the neutral hydrogen fraction 
-Include gas inflow and outflow analysis? -> Use supernova rate instead
 
 \begin{figure*}
     \centering
