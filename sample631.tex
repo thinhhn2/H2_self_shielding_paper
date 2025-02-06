@@ -425,7 +425,7 @@ Another difference between \textit{EarlyRe-ray} and \textit{EarlyRe-apx} is the 
 
 \subsection{Case study}
 
-In this section, we analyze the properties of two halos, one being the largest halo in the simulation and one having a halo mass of $X M_\odot$, which is in the mass range where the approximation in $H_{2}$ self-shielding fails to accurately model star formation, as suggested in Figure~\ref{fig:SFR_stellar_total_EarlyRe}. We match the halos between \textit{EarlyRe-ray} and \textit{EarlyRe-apx} using the procedure in Section~\ref{subsect:cross-matching_halos}. These two pairs of halos serve as examples to how the $H_{2}$ self-shielding modeling affects the galaxy properties. 
+In this section, we analyze the properties of two halos, one being the largest halo in the simulation and one having a halo mass of $\approx 1.7\times 10^{9} M_\odot$, which is in the mass range where the approximation in $H_{2}$ self-shielding fails to accurately model star formation, as suggested in Figure~\ref{fig:SFR_stellar_total_EarlyRe}. We match the halos between \textit{EarlyRe-ray} and \textit{EarlyRe-apx} using the procedure in Section~\ref{subsect:cross-matching_halos}. These two pairs of halos serve as examples to how the $H_{2}$ self-shielding modeling affects the galaxy properties. 
 
 \begin{figure*}
 	\gridline{\fig{EarlyRe/Halo0-0_property_comparison_Snapshot_211_Projection_x_ver1088.png}{0.375\textwidth}{}
@@ -441,10 +441,18 @@ In this section, we analyze the properties of two halos, one being the largest h
 	\label{fig:Halo8-9_comparison}
 \end{figure*}
 
+Figures~\ref{fig:Halo0-0_comparison} and \ref{fig:Halo8-9_comparison} show the projection of various properties at the last time step and the time evolution of those properties for the two halos in our case study. As hinted earlier by Figure~\ref{fig:H2_frac_EarlyRe}, gas mass stays consistent between \textit{EarlyRe-apx} and \textit{EarlyRe-ray} throughout the halo's evolution and thus is unaffected by the choice of $H_{2}$ self-shielding modeling. The gas density projection plot also looks relatively similar between our two runs. However, even though there is an agreement on total gas content, the amount of $H_{2}$ is considerably different in two simulations. For the largest halo, the mass of $H_{2}$ starts to diverge around $z \approx 14$, and \textit{EarlyRe-ray} has about 10 times more $H_{2}$ in that halo than \textit{EarlyRe-apx}. For the smaller halo, the discrepancy in the $H_{2}$ content is much more severe. Early in the simulation, the ray-tracing model consistently returns about 0.5 dex more mass than the approximation model. At $z \approx 11.5$, while \textit{EarlyRe-ray} witnesses an quick rise in molecular gas, \textit{EarlyRe-apx} maintains the same level of $H_{2}$, intensifying the difference to be up to 2 dex in $M_{H_{2}}$ between the two simulations at the last snapshot. This difference in $H_{2}$ matches our observation in Figure~\ref{fig:H2_frac_EarlyRe}. In addition to $H_{2}$ mass, the distribution of molecular hydrogen is also different. In both halos that we use as examples, molecular hydrogen exists in clumps of high density ($\approx 10^{-21} \mathrm{g}/\mathrm{cm}^{3}$) with respect to the surrounding. These clumps are located inside the galaxy (indicated by the white circle in the figures) and are concentrated in the galactic center. Outside of these clumps, $H_{2}$ gas density is quite low, reaching down to $10^{-36} \mathrm{g}/\mathrm{cm}^{3}$, proving that $H_{2}$ is completely photo-dissociated. In contrast, the halos in the \textit{EarlyRe-ray} set displays a much more uniform distribution of molecular hydrogen. While $H_{2}$ density is still highest at the halo's center, $H_{2}$ density in the surrounding region is only 2-3 dex lower, showing that $H_{2}$ is able to exist and form in the outer part of the galaxy and even in the CGM. Indeed, the existence of $H_{2}$ outside the galactic center is what causes the discrepancy in the $H_{2}$ fraction between \textit{EarlyRe-apx} and \textit{EarlyRe-ray}. More details on the topic of ISM and CGM will be discussed in Section~\ref{subsect:ISM_CGM}.
 
-\subsection{Effect on the ISM and CGM}
+With regards to stellar mass, the different in self-shielding modeling results in greater differences in smaller halos than in bigger halos, as pointed out in Figure~\ref{fig:SFR_stellar_total_EarlyRe}. For the case of the biggest halo in the simulation, Figure~\ref{fig:Halo0-0_comparison} shows that the stellar mass of the halo converge after $z \approx 13$, even though \textit{EarlyRe-ray} forms its first stellar particles a few million years earlier. On the other hand, for the smaller halo in Figure~\ref{fig:Halo8-9_comparison}, the halo modeled with ray-tracing forms stars approximately 20 million years prior to the \textit{EarlyRe-apx}'s counterpart. Furthermore, throughout most of this halo's evolution, the stellar mass in \textit{EarlyRe-ray} stays about several dex higher in the \textit{EarlyRe-apx} version. Thus, this proves the choice of $H_{2}$ self-shielding model affect stellar mass and the timing of star formation in halos. 
+
+In addition to the difference in stellar mass, the star formation history shows that the halo in the ray-tracing model experience more prolonged period of star formation while the halo in the approximation model experience shorter but stronger star formation episode (\textbf{more detailed explanation maybe?}). This behavior also happens in other large halos in the simulation box (for the brevity purpose, they are not shown in the paper). The prolonged star formation period leads to prolonged supernova rate, thus affecting the metal mixing and metal distribution of the galaxy. As supernovas go off in longer time period, more metals are produced at once and thus it takes a longer time for the metals to mixed with the surrounding gas. This leads to what we see in the metallicity projection plot, where metals are less mixed and more uniformly distributed in the \textit{EarlyRe-ray} set. More metals also results in more efficient cooling of gas, which is reflected in the temperature projection plot. These behaviors are more prominent in smaller halos, showing again that smaller halos are more susceptible by $H_{2}$ self-shielding modeling than of bigger halos. 
+
+\subsection{Effect on the galaxy and CGM}
+\label{subsect:ISM_CGM}
 
 Sub-section~\ref{subsect:effect_on_sf} explores how two treatments of modeling $H_{2}$ affect star formation in a halo as a whole. In this section, we more closely examine the effect of $H_{2}$ self-shielding modeling on the ISM, the CGM, and the IGM to help further explain the previous observations we have on star formation. 
+
+\textit{For the radiative star cluster model and the Population III star model used in our simulation, their overdensity thresholds for a star particle to form are $10^{7}$ and $10^{6}$, respectively. At the time step where we evaluate the $f_{sh}$ ($z$ = 10.9), these overdensity thresholds correspond to a gas density threshold of $4.5\times 10^{-20}$ and $4.5\times 10^{-21}$. According to Figure~\ref{fig:fsh_comparison}, these thresholds lie in the regime where $f_{sh}$ is typically over-estimated in the approximation model. On the other hand, $H_{2}$ gas in the interstellar medium (ISM) of \textit{EarlyRe-apx} can be under-shielded.} 
 
 
 \textbf{Make a big figure showing all the halo pairs projection plot at the last snapshot.}
@@ -466,18 +474,16 @@ Sub-section~\ref{subsect:effect_on_sf} explores how two treatments of modeling $
 \end{figure*}
 
 
-\subsection{Effect on the IGM and reionization}
+\subsection{Effect on the large-scale universe and reionization}
 
 \begin{figure*}
     \centering
-    \includegraphics[width=\textwidth]{EarlyRe/gas_surface_density_multiple_ver1088.png}
-    \caption{The gas surface density, gas temperature, and gas metallicity within the simulation's refined region between the \textit{EarlyRe-apx} and \textit{EarlyRe-ray}.}
+    \includegraphics[width=\textwidth]{EarlyRe/gas_surface_density_multiple_ver1088_ver2.png}
+    \caption{The gas density (1st and 2nd row), $H_{2}$ density (3rd and 4th row), gas temperature (5th and 6th row), and gas metallicity (7th and 8th row) within the simulation's refined region between the \textit{EarlyRe-apx} and \textit{EarlyRe-ray} across five time steps.}
     \label{fig:gas_surface_density_wholebox}
 \end{figure*}
 
-\textit{For the radiative star cluster model and the Population III star model used in our simulation, their overdensity thresholds for a star particle to form are $10^{7}$ and $10^{6}$, respectively. At the time step where we evaluate the $f_{sh}$ ($z$ = 10.9), these overdensity thresholds correspond to a gas density threshold of $4.5\times 10^{-20}$ and $4.5\times 10^{-21}$. According to Figure~\ref{fig:fsh_comparison}, these thresholds lie in the regime where $f_{sh}$ is typically over-estimated in the approximation model. On the other hand, $H_{2}$ gas in the interstellar medium (ISM) of \textit{EarlyRe-apx} can be under-shielded.} 
-
-
+We extend our analysis to the whole simulation box to investigate the effect of $H_{2}$ self-shielding modeling on a large-scale universe. Figure~\ref{fig:gas_surface_density_wholebox} shows the projection plots at different snapshots within the simulation's refined region, which is about 1000 comoving kpc in length. While the large-scale structure of gas is similar between two simulations, the distribution of other properties differ greatly. The amount of molecular hydrogen in the ISM is much lower when using the Sobolev-like approximation method 
 
 \begin{figure*}
     \centering
@@ -493,9 +499,10 @@ Sub-section~\ref{subsect:effect_on_sf} explores how two treatments of modeling $
     \label{fig:neutralHfrac_evolution}
 \end{figure}
 
+As suggested by Figure~\ref{fig:gas_surface_density_wholebox}, the universe in \textit{EarlyRe-apx} is much hotter at $z \approx 10.9$ than its counterpart in \textit{EarlyRe-ray}. Because reionization is linked to the heating of the IGM \citep{DAloisio+2019}, we expect that reionization is affected by the choice of self-shielding modeling.  
 
-\subsection{Investigation on late reionization period}
-Include the analysis for the LateRe set
+%\subsection{Investigation on late reionization period}
+%Include the analysis for the LateRe set
 
 %\subsection{\textit{LateRe} simulation set}
 
@@ -536,7 +543,7 @@ Include the analysis for the LateRe set
 %    \label{fig:example_2_halos_LateRe}
 %\end{figure}
 
-\section{Conclusions and Discussions}
+\section{Discussion and Conclusion}
 Maybe mention that the Renaissance Simulation (and maybe others) doesn't implement self-shielding, so can affect the results.
 
 The strong radiation in late reionization destroys H2 in both \textit{ray} and \textit{apx} sets. This is reflected by the fact that the separation between the \textit{ray} and the \textit{apx} is not as prominent as in the EarlyRe set. In the EarlyRe set, the radiation is still weak, thus it only affects the non-shielding version. The halos of \textit{ray} version are shielded with this weak radiation, but not with the strong radiation as in LateRe.  

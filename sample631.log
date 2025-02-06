@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2025.1.19)  22 JAN 2025 14:50
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2025.1.19)  6 FEB 2025 16:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -699,6 +699,12 @@ File: EarlyRe/Halo8-9_property_comparison_Snapshot_211_Projection_x_ver1088.png
 File: EarlyRe/Halo8-9_property_evolution_comparison_ver1088.png Graphic file (t
 ype bmp)
 <EarlyRe/Halo8-9_property_evolution_comparison_ver1088.png>
+
+Underfull \hbox (badness 1226) in paragraph at lines 446--447
+\TU/lmr/m/n/10 shielding modeling results in greater differences in
+ []
+
+[8]
 File: EarlyRe/Galaxy_CGM_phaseplot_Halos_0-0_Snapshot_211_ver1088.png Graphic f
 ile (type bmp)
 <EarlyRe/Galaxy_CGM_phaseplot_Halos_0-0_Snapshot_211_ver1088.png>
@@ -711,38 +717,39 @@ File: EarlyRe/Galaxy_CGM_phaseplot_Halos_18-19_Snapshot_211_ver1088.png Graphic
 File: EarlyRe/Galaxy_CGM_H2phaseplot_Halos_18-19_Snapshot_211_ver1088.png Graph
 ic file (type bmp)
 <EarlyRe/Galaxy_CGM_H2phaseplot_Halos_18-19_Snapshot_211_ver1088.png>
-File: EarlyRe/gas_surface_density_multiple_ver1088.png Graphic file (type bmp)
-<EarlyRe/gas_surface_density_multiple_ver1088.png>
+File: EarlyRe/gas_surface_density_multiple_ver1088_ver2.png Graphic file (type 
+bmp)
+<EarlyRe/gas_surface_density_multiple_ver1088_ver2.png>
 File: EarlyRe/neutralHfraction_comparison_multiple.png Graphic file (type bmp)
 <EarlyRe/neutralHfraction_comparison_multiple.png>
 File: EarlyRe/neutralHfraction_evolution.png Graphic file (type bmp)
 <EarlyRe/neutralHfraction_evolution.png>
- (./sample631.bbl [8] [9] [10] [11]
+ [9] (./sample631.bbl [10] [11]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 202.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 22.
 
 [12]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 202.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 22.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
-) [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 608.
+[13]) [14]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 615.
  (./sample631.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 608.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 608.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 615.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 615.
 Package rerunfilecheck Info: File `sample631.out' has not changed.
-(rerunfilecheck)             Checksum: 844E6D89E09E5A99040A3C8C45F9AC89;1185.
+(rerunfilecheck)             Checksum: C2279186C4D6156C9C25F1483C636226;1103.
  ) 
 Here is how much of TeX's memory you used:
- 14007 strings out of 481772
- 201685 string characters out of 5936451
- 570469 words of memory out of 5000000
- 30771 multiletter control sequences out of 15000+600000
+ 14010 strings out of 481772
+ 201784 string characters out of 5936451
+ 556444 words of memory out of 5000000
+ 30774 multiletter control sequences out of 15000+600000
  540424 words of font info for 76 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,12n,45p,2781b,590s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,45p,2781b,546s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sample631.pdf (13 pages).
+Output written on sample631.pdf (14 pages).
