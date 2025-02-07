@@ -457,8 +457,6 @@ Sub-section~\ref{subsect:effect_on_sf} explores how two treatments of modeling $
 
 \textbf{Make a big figure showing all the halo pairs projection plot at the last snapshot.}
 
-\textbf{Remember to comment on the stellar mass of the galaxies in Figure 5 and 6.}
-
 \begin{figure*}
     \gridline{\fig{EarlyRe/Galaxy_CGM_phaseplot_Halos_0-0_Snapshot_211_ver1088.png}{0.47\textwidth}{(a)}
     \fig{EarlyRe/Galaxy_CGM_H2phaseplot_Halos_0-0_Snapshot_211_ver1088.png}{0.485\textwidth}{(b)}}
@@ -483,12 +481,12 @@ Sub-section~\ref{subsect:effect_on_sf} explores how two treatments of modeling $
     \label{fig:gas_surface_density_wholebox}
 \end{figure*}
 
-We extend our analysis to the whole simulation box to investigate the effect of $H_{2}$ self-shielding modeling on a large-scale universe. Figure~\ref{fig:gas_surface_density_wholebox} shows the projection plots at different snapshots within the simulation's refined region, which is about 1000 comoving kpc in length. While the large-scale structure of gas is similar between two simulations, the distribution of other properties differ greatly. The amount of molecular hydrogen in the ISM is much lower when using the Sobolev-like approximation method 
+We extend our analysis to the whole simulation box to investigate the effect of $H_{2}$ self-shielding modeling on a large-scale universe. Figure~\ref{fig:gas_surface_density_wholebox} shows the projection plots at different snapshots within the simulation's refined region, which is about 1/10000 volume of the whole simulation box. While the large-scale structure of gas is similar between two simulations, the distribution of other properties differ greatly. The amount of molecular hydrogen in the ISM is much lower when using the Sobolev-like approximation method 
 
 \begin{figure*}
     \centering
     \includegraphics[width=\textwidth]{EarlyRe/neutralHfraction_comparison_multiple.png}
-    \caption{The neutral hydrogen fraction in the whole refined region box between the \textit{EarlyRe-ray} and \textit{EarlyRe-apx} simulations.}
+    \caption{The neutral hydrogen fraction in the refined region box between the \textit{EarlyRe-ray} and \textit{EarlyRe-apx} simulations across five time steps.}
     \label{fig:neutralHfrac_map}
 \end{figure*}
 
@@ -499,7 +497,8 @@ We extend our analysis to the whole simulation box to investigate the effect of 
     \label{fig:neutralHfrac_evolution}
 \end{figure}
 
-As suggested by Figure~\ref{fig:gas_surface_density_wholebox}, the universe in \textit{EarlyRe-apx} is much hotter at $z \approx 10.9$ than its counterpart in \textit{EarlyRe-ray}. Because reionization is linked to the heating of the IGM \citep{DAloisio+2019}, we expect that reionization is affected by the choice of self-shielding modeling.  
+As suggested by Figure~\ref{fig:gas_surface_density_wholebox}, the universe in \textit{EarlyRe-apx} is much hotter at $z \approx 10.9$ than its counterpart in \textit{EarlyRe-ray}. Because cosmic reionization is linked to the heating of the IGM \citep{DAloisio+2019}, we expect that reionization is affected by the choice of self-shielding modeling. Figure~\ref{fig:neutralHfrac_map} shows the distribution of neutral hydrogen fraction $\chi_{\mathrm{HI}}$ within the refined region between our two simulations. The $\chi_{\mathrm{HI}}$ value of 0 corresponds to complete ionization of atomic hydrogen. High-energy radiation from galaxies ionizes hydrogen, decreasing $\chi_{\mathrm{HI}}$ in the surrounding IGM regions. $\chi_{\mathrm{HI}}$ can go up again during recombination between protons and electrons to form neutral hydrogen, which is efficient at temperature lower than $10^{4} \mathrm{K}$ \citep{Wise+2019}. In all time steps shown, \textit{EarlyRe-apx} displays more extended and prominent region of ionized hydrogen, expanding out to the further IGM region. On the other hand, hydrogen is less ionized in \textit{EarlyRe-ray}, and ionized hydrogen is limited around the galaxy filament (shown in the top two rows of Figure~\ref{fig:gas_surface_density_wholebox}). This observation is quantified in Figure~\ref{fig:neutralHfrac_evolution} where we plot the volume-weighted average of $\chi_{\mathrm{HI}}$ within the simulation's refined region as a function of time. At the start of both simulations, the universe is dominated with neutral hydrogen ($\chi_{\mathrm{HI}} \approx 1$). However, about 0.32 Gyr after the Big Bang ($z \approx 13.5$), the volume-weighted average of the neutral hydrogen fraction starts to drop considerably in the approximation model when the ray-tracing model only shows a slight decline. By the end of the simulation, while more than 90\% of hydrogen is still neutral in \textit{EarlyRe-ray}, only about 65\% of hydrogen remains as such in \textit{EarlyRe-apx}. While both simulations are not run long enough to cover the whole reionization epoch, Figure~\ref{fig:neutralHfrac_evolution} suggests that the reionization may be complete earlier in \textit{EarlyRe-apx} than in \textit{EarlyRe-ray}, even though the reionization's start time is similar. This illustrates that the use of Sobolev-like approximation to model $H_{2}$ self-shielding speeds up the reionization process and thus affect our theoretical prediction and modeling of the reionization epoch. 
+ 
 
 %\subsection{Investigation on late reionization period}
 %Include the analysis for the LateRe set
