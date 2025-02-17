@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2025.1.19)  7 FEB 2025 15:26
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2025.1.19)  17 FEB 2025 11:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -700,11 +700,13 @@ File: EarlyRe/Halo8-9_property_evolution_comparison_ver1088.png Graphic file (t
 ype bmp)
 <EarlyRe/Halo8-9_property_evolution_comparison_ver1088.png>
 
-Underfull \hbox (badness 1226) in paragraph at lines 446--447
+Underfull \hbox (badness 1226) in paragraph at lines 447--448
 \TU/lmr/m/n/10 shielding modeling results in greater differences in
  []
 
 [8]
+File: EarlyRe/gmf_h2f_radialprofile_comparison.png Graphic file (type bmp)
+<EarlyRe/gmf_h2f_radialprofile_comparison.png>
 File: EarlyRe/Galaxy_CGM_phaseplot_Halos_0-0_Snapshot_211_ver1088.png Graphic f
 ile (type bmp)
 <EarlyRe/Galaxy_CGM_phaseplot_Halos_0-0_Snapshot_211_ver1088.png>
@@ -720,36 +722,30 @@ ic file (type bmp)
 File: EarlyRe/gas_surface_density_multiple_ver1088_ver2.png Graphic file (type 
 bmp)
 <EarlyRe/gas_surface_density_multiple_ver1088_ver2.png>
+ [9] [10] [11]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 492.
+
+[12]
 File: EarlyRe/neutralHfraction_comparison_multiple.png Graphic file (type bmp)
 <EarlyRe/neutralHfraction_comparison_multiple.png>
 File: EarlyRe/neutralHfraction_evolution.png Graphic file (type bmp)
 <EarlyRe/neutralHfraction_evolution.png>
- [9] [10] [11]
-
-LaTeX Warning: A float is stuck (cannot be placed) on input line 547.
-
-[12]
-
-LaTeX Warning: A float is stuck (cannot be placed) on input line 547.
-
-
-Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
-
-(./sample631.bbl [13]) [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 614.
+ (./sample631.bbl [13] [14]) [15]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 621.
  (./sample631.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 614.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 614.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 621.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 621.
 Package rerunfilecheck Info: File `sample631.out' has not changed.
 (rerunfilecheck)             Checksum: C2279186C4D6156C9C25F1483C636226;1103.
  ) 
 Here is how much of TeX's memory you used:
- 14013 strings out of 481772
- 201835 string characters out of 5936451
- 588793 words of memory out of 5000000
- 30777 multiletter control sequences out of 15000+600000
+ 14027 strings out of 481772
+ 202258 string characters out of 5936451
+ 566379 words of memory out of 5000000
+ 30790 multiletter control sequences out of 15000+600000
  540424 words of font info for 76 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,12n,45p,2781b,524s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,45p,2781b,564s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sample631.pdf (14 pages).
+Output written on sample631.pdf (15 pages).

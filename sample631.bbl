@@ -69,6 +69,10 @@ Gnedin, N.~Y., Tassis, K., \& Kravtsov, A.~V. 2009, The Astrophysical Journal,
 Gorski, K.~M., Hivon, E., Banday, A.~J., {et~al.} 2005, The Astrophysical
   Journal, 622, 759, \dodoi{10.1086/427976}
 
+\bibitem[{Gould \& Salpeter(1963)}]{Gould+1963}
+Gould, R.~J., \& Salpeter, E.~E. 1963, The Astrophysical Journal, 138, 393,
+  \dodoi{10.1086/147654}
+
 \bibitem[{Greif(2014)}]{Greif+2014}
 Greif, T.~H. 2014, Monthly Notices of the Royal Astronomical Society, 444,
   1566, \dodoi{10.1093/mnras/stu1532}
@@ -112,6 +116,10 @@ Kennicutt, R. C.~J., Calzetti, D., Walter, F., {et~al.} 2007, The Astrophysical
   Schinnerer, Schuster, \& Usero}]{Leroy+2013}
 Leroy, A.~K., Walter, F., Sandstrom, K., {et~al.} 2013, The Astronomical
   Journal, 146, 19, \dodoi{10.1088/0004-6256/146/2/19}
+
+\bibitem[{Palla {et~al.}(1983)Palla, Salpeter, \& Stahler}]{Palla+1983}
+Palla, F., Salpeter, E.~E., \& Stahler, S.~W. 1983, The Astrophysical Journal,
+  271, 632, \dodoi{10.1086/161231}
 
 \bibitem[{{Planck Collaboration} {et~al.}(2016){Planck Collaboration}, Ade,
   Aghanim, Arnaud, Ashdown, Aumont, Baccigalupi, Banday, Barreiro, Bartlett,
