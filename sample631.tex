@@ -258,6 +258,7 @@ Champaign, Urbana, IL 61801, USA}
 %% Mark off the abstract in the ``abstract'' environment. 
 \begin{abstract}
 
+Modeling molecular hydrogen accurately is an important task in cosmological simulation because it affects star formation and galaxy evolution. Given the increasing capabilities of computational power in recent years, more robust and computationally-heavy techniques are now achievable. One of which is the use of ray tracing to model molecular hydrogen self-shielding. This paper evaluates the use of Sobolev-like approximation in self-shielding modeling - a method widely used to reduce computational cost in literature - and test whether it agrees with the results from a more vigorous ray tracing method. We run two high resolution zoom-in cosmological simulations with two models up to redshift of 10.9 to investigate their effects of galaxy evolution in the early universe. We find that the approximation model underestimates the level of $H_{2}$ self-shielding in low gas density environment, causing halos to lose a lot of $H_{2}$ when compared with the ray tracing model. The susceptibility of $H_{2}$ against high-energy radiation in the simulation with the approximation model prevents smaller halos from forming stars, while bigger halos seem to be uninfluenced by the choice of self-shielding model in terms of stellar mass. Within a halo, we show that the discrepancy between the approximation and the ray-tracing model is more prominent in the halo's outer region due to its low gas density. On a large scale, the approximation model have fewer metal-contaminated regions in the intergalactic medium, heats up the universe quicker, and speeds up the reionization process. These results show that the Sobolev-like approximation to model $H_{2}$ self-shielding alter various properties of galaxies and the large-scale universe, emphasizing a need for caution when employing this technique in running cosmological simulations. 
 
 \end{abstract}
 
@@ -297,7 +298,7 @@ Through modeling a semi-infinite, static slab of gas irradiated on one surface, 
 However, there are limitations to the applicability of approximate treatments in various test problems when compared to the accurate full ray-tracing calculation. In the context of photodissociation of $H_{2}$ in protogalaxies and direct-collapse black hole formation, \cite{Wolcott-Green+2011} show that the Sobolev length, the density gradient, and the six-ray approximation methods overestimate the $H_{2}$ shielding degree by an order of magnitude in low-density regions of $n < 10^{4} cm^{-3}$. Also in the context of direct-collapse black hole, when comparing with their non-local approximation detailed in \cite{Hartwig+2015}, \cite{Hartwig+2015b} find that the Jeans approach returns a critical flux value $J_{crit}$ - the lowest flux required for a halo with virial temperature above $10^{4} K$ to collapse to a supermassive black hole seed - two times larger than the non-local approximation, leading to a disparity in the predicted number density of black hole seeds. \cite{Greif+2014} investigate the collapse of primordial star-forming clouds with an accurate $H_{2}$ line emission model and notice that the Sobolev method brings about a thermal instability for the collapsing cloud and an order-of-magnitude overestimation of the escape fraction for high optical depth. When evaluating the triggered Population III star formation at the limb of the HII region, \cite{Chiaki+2023a} find that while the density-gradient method matches well with the ray-tracing method, the Jeans length approximation results in an overestimation of the number of the Population III stars at the front of the shock wave. The authors suggest that this is because the thickness of the $H_{2}$ ring of the shock front is typically smaller than the Jeans length, and thus the local approximation is inappropriate. In their large-scale galactic discs simulations, \cite{Safranek-Shrader+2017} notices that the Sobolev method underpredicts the $H_{2}$ abundance in the disc by a factor of 5, while the six-ray and the Jeans length methods perform better, which is contrary to the findings that Jeans length method is ineffective in previous studies. Thus, the validity of these approximation methods is highly problem-dependent and they cannot be used as a general substitution for the full ray-tracing calculation. 
 
 
-\textbf{A simulation that uses approximated H2 self-shielding: COLDSIM, Maio et al 2021}
+\textbf{A simulation that uses approximated H2 self-shielding: COLDSIM, Maio et al 2021. Maybe mention that the Renaissance Simulation (and maybe others) doesn't implement self-shielding, so can affect the results.}
 
 In this paper, we expand the investigation by comparing these approximation methods with the detailed ray-tracing methods, this time in the context of \textbf{star formation during the Reionization period}. This will help further examine and inform the community about the applicability of these approximations in modeling $H_{2}$ in different contexts. In Section ..., we will describe our simulation and the implemented $H_{2}$ self-shielding models. Section ... analyzes the effect of these models on star formation and galaxy evolution during Reionization. Last but not least, in Section ..., we discuss the implications of the findings and summarize the paper. \\
 
@@ -423,7 +424,7 @@ Another difference between \textit{EarlyRe-ray} and \textit{EarlyRe-apx} is the 
 
 %This result gives us a more detailed look at the disparity of $H_{2}$ when using the ray-tracing scheme and the Sobolev-like approximation scheme and reaffirm the results from Figure~\ref{fig:H2_frac_EarlyRe}. The other eight matched halo pairs also show a similar pattern. Thus, for brevity, we do not show their phase plots.
 
-\subsection{Case study}
+\subsection{Case study on star formation}
 \label{subsect:case_study}
 
 In this section, we analyze the properties of two halos, one being the largest halo in the simulation and one having a halo mass of $\approx 1.7\times 10^{9} M_\odot$, which is in the mass range where the approximation in $H_{2}$ self-shielding fails to accurately model star formation, as suggested in Figure~\ref{fig:SFR_stellar_total_EarlyRe}. We match the halos between \textit{EarlyRe-ray} and \textit{EarlyRe-apx} using the procedure in Section~\ref{subsect:cross-matching_halos}. These two pairs of halos serve as examples to how the $H_{2}$ self-shielding modeling affects the galaxy properties. 
@@ -451,31 +452,39 @@ In addition to the difference in stellar mass, the star formation history shows 
 \subsection{Effect on the galaxy and CGM}
 \label{subsect:ISM_CGM}
 
-Sub-section~\ref{subsect:effect_on_sf} explores how two treatments of modeling $H_{2}$ affect star formation in a halo as a whole. In this section, we more closely examine the effect of $H_{2}$ self-shielding modeling on the ISM, the CGM, and the IGM to help further explain the previous observations we have on star formation. 
-
-\textit{For the radiative star cluster model and the Population III star model used in our simulation, their overdensity thresholds for a star particle to form are $10^{7}$ and $10^{6}$, respectively. At the time step where we evaluate the $f_{sh}$ ($z$ = 10.9), these overdensity thresholds correspond to a gas density threshold of $4.5\times 10^{-20}$ and $4.5\times 10^{-21}$. According to Figure~\ref{fig:fsh_comparison}, these thresholds lie in the regime where $f_{sh}$ is typically over-estimated in the approximation model. On the other hand, $H_{2}$ gas in the interstellar medium (ISM) of \textit{EarlyRe-apx} can be under-shielded.} 
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.95\columnwidth]{EarlyRe/gmf_h2f_radialprofile_comparison.png}
-	\caption{The comparison of the gas mass fraction (gmf) and $H_{2}$ fraction (h2f) in different radial bins between the \textit{EarlyRe-ray} and the \textit{EarlyRe-apx} simulations at $z = 10.89$.}
-	\label{fig:gmf_h2f_radialprofile}
-\end{figure}
+In this section, we more closely examine the effect of $H_{2}$ self-shielding modeling on the ISM, the CGM, and the IGM to help further explain the previous observations we have on star formation.
 
 \begin{figure*}
     \gridline{\fig{EarlyRe/Galaxy_CGM_phaseplot_Halos_0-0_Snapshot_211_ver1088.png}{0.47\textwidth}{(a)}
-    \fig{EarlyRe/Galaxy_CGM_H2phaseplot_Halos_0-0_Snapshot_211_ver1088.png}{0.485\textwidth}{(b)}}
-    \caption{The gas phase plot (Sub-figure (a)) and the molecular hydrogen phase plot (Sub-figure (b)) of the largest halo ($M_{\mathrm{halo}} = 1.3\times10^{10} M_\odot$) in our simulation set, evaluated at the last time step $z = 10.89$. For each sub-figure, the left column shows the halo in \textit{EarlyRe-apx}, and the right column shows its counterpart in \textit{EarlyRe-ray}. The top row in each subfigure shows the phase plot using the gas cells within the galaxy region ($r \leq R_{bary,2000}$), and the bottom row shows the phase plot using the gas cells in the CGM region ($R_{bary,2000} < r \leq R_{vir}$).} 
+    \fig{EarlyRe/Galaxy_CGM_partialH2phaseplot_Halos_0-0_Snapshot_211_ver1088.png}{0.485\textwidth}{(b)}}
+    \caption{The gas phase plot colored by gas mass (Sub-figure (a)) and by molecular hydrogen mass (Sub-figure (b)) of the largest halo ($M_{\mathrm{halo}} = 1.3\times10^{10} M_\odot$) in our simulation set, evaluated at the last time step $z = 10.89$. For each sub-figure, the left column shows the halo in \textit{EarlyRe-apx}, and the right column shows its counterpart in \textit{EarlyRe-ray}. The top row in each subfigure shows the phase plot using the gas cells within the galaxy region ($r \leq R_{bary,2000}$), and the bottom row shows the phase plot using the gas cells in the CGM region ($R_{bary,2000} < r \leq R_{vir}$).} 
     \label{fig:phaseplot_Halo0-0}
 \end{figure*}
 
 \begin{figure*}
-    \gridline{\fig{EarlyRe/Galaxy_CGM_phaseplot_Halos_18-19_Snapshot_211_ver1088.png}{0.47\textwidth}{(a)}
-    \fig{EarlyRe/Galaxy_CGM_H2phaseplot_Halos_18-19_Snapshot_211_ver1088.png}{0.485\textwidth}{(b)}}
-    \caption{Similar to Figure~\ref{fig:phaseplot_Halo0-0}, for a halo with mass $M_{\mathrm{halo}} = 7.1\times 10^{8} M_\odot$.}
-    \label{fig:phaseplot_Halo18-19}
+    \gridline{\fig{EarlyRe/Galaxy_CGM_phaseplot_Halos_8-9_Snapshot_211_ver1088.png}{0.47\textwidth}{(a)}
+    \fig{EarlyRe/Galaxy_CGM_partialH2phaseplot_Halos_8-9_Snapshot_211_ver1088.png}{0.485\textwidth}{(b)}}
+    \caption{Similar to Figure~\ref{fig:phaseplot_Halo0-0}, for a halo with mass $M_{\mathrm{halo}} \approx 1.7\times 10^{9} M_\odot$ at z = 10.89.}
+    \label{fig:phaseplot_Halo8-9}
 \end{figure*}
 
+Following the two case studies we examined in Section~\ref{subsect:case_study}, Figures~\ref{fig:phaseplot_Halo0-0} and \ref{fig:phaseplot_Halo8-9} show the gas and $H_{2}$ phase plot of the largest halo in the simulation ($M_{\mathrm{halo}} = 1.3\times10^{10} M_\odot$) and a smaller halo of mass $M_{\mathrm{halo}} \approx 1.7\times 10^{9} M_\odot$. The plots are separated into the galaxy (top row) region and the CGM region (bottom row). One noticeable disparity between \textit{EarlyRe-ray} and \textit{EarlyRe-apx} is the inefficiency of the gas to cool down below $10^{4} K$ due to the lack of molecular hydrogen in the region. With atomic hydrogen HI being the only dominant component, processes such as Bremsstrahlung emission, atomic hydrogen’s ionization and excitation processes can only help cool the gas down to $10^{4} K$, while the existence of $H_{2}$ can introduce more energy levels to lower gas temperature. Thus, we can see a high concentration of gas at $10^{4} K$ at low to intermediate density ($\rho_{\mathrm{gas}} \leq 10^{-22} \mathrm{g}/\mathrm{cm}^{3}$) when using the approximation model. The gas in \textit{EarlyRe-apx} can only cool down to lower temperature after reaching a density of $\approx 10^{-22} \mathrm{g}/\mathrm{cm}^{3}$ - the limit which the approximation model can better predict the $H_{2}$ self-shielding factor, according to Figure~\ref{fig:fsh_comparison}. When the gas is dense enough, the self-shielding of $H_{2}$ is approximated by \textit{EarlyRe-apx} more accurately, leading to more $H_{2}$ to exist and gas to cool down. Indeed, according to the $H_{2}$ phase plot, $H_{2}$ exists most abundantly at the gas density of $\rho_{\mathrm{H}_{2}} \geq 10^{-22} \mathrm{g}/\mathrm{cm}^{3}$. The phase plot also re-affirm that the amount of $H_{2}$ existed in the \textit{EarlyRe-apx}'s galaxy is much smaller than that of \textit{EarlyRe-ray}, as pointed out in Figure~\ref{fig:Halo0-0_comparison}. On the other hand, the large amount of molecular hydrogen in \textit{EarlyRe-ray} existing even at low density helps cool down more of the gas. This allows gas to become denser. For example, the densest gas cell in the \textit{EarlyRe-ray}'s galaxy in Figure~\ref{fig:phaseplot_Halo0-0} reaches the density above $10^{-18} \mathrm{g}/\mathrm{cm}^{3}$, about 10 to 100 times higher than the densest region in the \textit{EarlyRe-apx}'s galaxy. It is important to note that for the radiative star cluster model and the Population III star model used in our simulation, their overdensity thresholds for a star particle to form are $10^{7}$ and $10^{6}$, respectively. At the last time step ($z$ = 10.89), these overdensity thresholds correspond to a gas density threshold of $4.5\times 10^{-20}$ and $4.5\times 10^{-21}$. This suggests that both \textit{EarlyRe-ray} and \textit{EarlyRe-apx} galaxies are able to form stars; however, since \textit{EarlyRe-ray} has more denser gas cells, it can form stars easier and quicker. (\textbf{so why the two stellar mass is the same?})
+Furthermore, this effect is more prominent for lower halo. When using the approximation model, the gas within the \textit{EarlyRe-apx}'s galaxy shown in Figure~\ref{fig:phaseplot_Halo8-9} cannot cool down below $10^{3} K$ or gets denser than $10^{-20} \mathrm{g}/\mathrm{cm}^{3}$, while its counterpart can reach below $10^{2} K$ and about $10^{-18} \mathrm{g}/\mathrm{cm}^{3}$ thanks to much more $H_{2}$ being available. 
+
+In the CGM, gas has lower density and thus $H_{2}$ is more susceptible to destruction by LW radiation when using the approximation model. For both halos in our case studies, there is very little $H_{2}$ existing in the CGM in the \textit{EarlyRe-apx} simulation. This keeps the gas in the CGM relatively hot at the minimum of $10^{4} K$. In contrast, for \textit{EarlyRe-ray} simulation, $H_{2}$ still exists in sufficient quantity outside of the galaxies that the CGM gas can cool down to a few hundred kelvins. Therefore, the use of the self-shielding model significantly effect the temperature and density profiles of both the galaxy and the CGM.  
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.95\columnwidth]{EarlyRe/gmf_h2f_radialprofile_comparison.png}
+	\caption{The comparison of the gas mass fraction (gmf) and $H_{2}$ fraction (h2f) in different radial bins (0 to 0.05 $R_\mathrm{vir}$, 0.05 to 0.2$R_\mathrm{vir}$, 0.2 to 0.5$R_\mathrm{vir}$, and 0.5 to 1$R_\mathrm{vir}$) between the \textit{EarlyRe-ray} and the \textit{EarlyRe-apx} simulations at $z = 10.89$. The sample size for the statistics is 26 halos. The box represents the first and third quartile of the sample. The whiskers extend from the box to the further point within 1.5 times the inter-quartile range. The median is shown as a line in the box and the mean is shown as a triangle point.}
+	\label{fig:gmf_h2f_radialprofile}
+\end{figure}
+
+
+The effect of the self-shielding model on different region of the halo is further illustrated in Figure~\ref{fig:gmf_h2f_radialprofile}, which shows the comparison between \textit{EarlyRe-ray} and \textit{EarlyRe-apx} with respect to the gas mass fraction and the $H_{2}$ fraction in four radial bins. We crossmatch and select halos whose gas is resolved enough for us to locate the baryonic center of mass and distinctly separate the halo into multiple bins. We end up with 26 halos, including halos without any stars, to calculate the statistics. The figure shows that while the gas mass fraction remains consistent between the two models across all radial bins, the ratio of $H_{2}$ fraction between the approximation and the ray tracing model shows a declining trend towards larger ratio. The $H_{2}$ fraction in \textit{EarlyRe-apx} agrees with \textit{EarlyRe-ray} only in the inner most region of the galaxy ($r < 0.05R_{\mathrm{vir}}$) where gas is at high density and thus the self-shielding factor is accurately calculated by the approximation model. As we go to the outer radius, gas density decreases and thus $H_{2}$ in \textit{EarlyRe-apx} is under-shielded, leading to a decrease in the ratio of $H_{2}$ fraction. Further into the CGM ($r > 0.2R_{\mathrm{vir}} \approx R_{\mathrm{bary},2000}$), the approximation model fails to estimate the self-sheilding factor, leading to a clear absence of molecular hydrogen in this region when compared with the ray-tracing model. 
+
+It is important to note that we have an outlier in Figure~\ref{fig:gmf_h2f_radialprofile} where a halo with mass $M_{\mathrm{halo}} = 3.6\times10^{10} M_\odot$ has a $H_{2}$ fraction within $0.05R_{\mathrm{vir}}$ about 8 times larger in \textit{EarlyRe-apx} compared to \textit{EarlyRe-ray}. To ensure the readability of the figure, we exclude this outlier from the figure; however, you can still see its effect on pulling the mean value away from the median value. The reason for this big difference is because for this particular halo, the gas in the inner region is much more compact and reaches a higher density in \textit{EarlyRe-apx}. In particular, the densest gas cell in the \textit{EarlyRe-apx}'s halo is about $10^{-19} \mathrm{g}/\mathrm{cm}^{3}$, 10 times higher than the \textit{EarlyRe-ray}'s counterpart. At $\rho_\mathrm{gas} \approx 10^{-19} \mathrm{g}/\mathrm{cm}^{3}$, according to Figure~\ref{fig:fsh_comparison}, the Sobolev-like approximation typically over-estimate the self-shielding amount, leading to more $H_{2}$ being able to form. More $H_{2}$ forming corresponds to more cooling, leading to the collapse of gas and increase in gas density. This results in a runaway effect that causes this halo to have noticeably high amount of $H_{2}$ in its inner region when using the approximation model. However, this halo is the only case where the $H_{2}$ fraction is considerably higher when using the approximation and it only happens near the galactic center. In most of the cases, this runaway effect only happens locally at a few dense gas cells (as also shown in the $H_{2}$ clumps in Figures~\ref{fig:Halo0-0_comparison} and \ref{fig:Halo8-9_comparison}) that it does not change the average $H_{2}$ fraction of the whole galactic region. 
 
 \subsection{Effect on the large-scale universe and reionization}
 
@@ -491,10 +500,10 @@ We extend our analysis to the whole simulation box to investigate the effect of 
 As pointed out in Section~\ref{subsect:case_study}, galaxies in \textit{EarlyRe-ray} experience more prolonged star forming period than their counterparts in \textit{EarlyRe-apx} and thus more metals are pushed out simultaneously in each period. This leaves shorter time for pristine gas to mix in to reduce the gas metallicity. Furthermore, more metals being produced at once helps contaminate the IGM more easily. When metals get out to the IGM, because of the medium's very low gas density for mixing, metallicity does not decrease over time, creating more extended metal-rich regions spanning out to the IGM in the ray-tracing simulation. It is important to note that this difference in metallicity originates from the difference in star formation history rather than the amount of metals being produced because the galaxies in two simulations have relatively similar stellar mass and total supernova energy, as shown in Figure~\ref{fig:Halo0-0_comparison}.    
 
 \begin{figure*}
-    \centering
-    \includegraphics[width=\textwidth]{EarlyRe/neutralHfraction_comparison_multiple.png}
-    \caption{The neutral hydrogen fraction in the refined region box between the \textit{EarlyRe-ray} and \textit{EarlyRe-apx} simulations across five time steps.}
-    \label{fig:neutralHfrac_map}
+	\centering
+	\includegraphics[width=\textwidth]{EarlyRe/neutralHfraction_comparison_multiple.png}
+	\caption{The neutral hydrogen fraction in the refined region box between the \textit{EarlyRe-ray} and \textit{EarlyRe-apx} simulations across five time steps.}
+	\label{fig:neutralHfrac_map}
 \end{figure*}
 
 \begin{figure}
@@ -550,11 +559,18 @@ As suggested by Figure~\ref{fig:gas_surface_density_wholebox}, the universe in \
 %\end{figure}
 
 \section{Discussion and Conclusion}
-Maybe mention that the Renaissance Simulation (and maybe others) doesn't implement self-shielding, so can affect the results.
 
-The strong radiation in late reionization destroys H2 in both \textit{ray} and \textit{apx} sets. This is reflected by the fact that the separation between the \textit{ray} and the \textit{apx} is not as prominent as in the EarlyRe set. In the EarlyRe set, the radiation is still weak, thus it only affects the non-shielding version. The halos of \textit{ray} version are shielded with this weak radiation, but not with the strong radiation as in LateRe.  
+In this paper, using high-resolution zoom-in simulations, we run two radiative transfer models of molecular hydrogen self-shielding to examine their effect on galaxy evolution. The two models are the Sobolev-like approximation that uses local gas property to estimate the $H_{2}$ photodissociation rate and the ray tracing model based on HEALPix scheme. In summary, our key findings are as follows:
 
-\textbf{Remember to use bullet points for each main result and specifically state the figure associated with each main result.}
+\begin{itemize}
+	\item The Sobolev-like approximation for $H_{2}$ self-shielding underestimates the self-shielding factor at low gas density ($\rho_\mathrm{gas} \leq 10^{-22} \mathrm{g}/\mathrm{cm}^{3}$) while overestimates the self-shielding factor at high gas density ($\rho_\mathrm{gas} \geq 10^{-19} \mathrm{g}/\mathrm{cm}^{3}$). This leads to halos in the simulation with the approximation model having their $H_{2}$ fraction several dex lower than their counterparts in the simulation with ray tracing model, especially for lower mass halo. (Figures~\ref{fig:fsh_comparison} and \ref{fig:H2_frac_EarlyRe}) 
+	\item The Sobolev-like approximation affects star formation in cosmological simulation. Lower-mass halos ($M_{halo} < 10^{9} M_\odot$) are harder to form stars due to the lack of molecular hydrogen fuel. Bigger halos are less affected and still converge in stellar mass between the two models. (Figures~\ref{fig:SFR_stellar_total_EarlyRe}, \ref{fig:number_halowstars_vs_time_EarlyRe}) 
+	\item Even though there is convergence in the total stellar mass, the star formation history in the ray-tracing model shows more prolonged period of star formation while the approximation model shows a more bursty behavior. The different star formation behavior results in metals being produced, distributed, and mixed differently in the two simulation.  This leads to a discrepancy in the metallicity and temperature profile between the two simulations where the ray-tracing model shows a more metal-riched and cooler ISM. (Figures~\ref{fig:Halo0-0_comparison}, \ref{fig:Halo8-9_comparison}, and \ref{fig:gas_surface_density_wholebox})
+	\item Because the CGM is less dense than the galaxy, the effect of the approximation is more prominent in the outer region of the halo. Also, halos in the simulation with ray-tracing have more cool diffuse gas than in the simulation with the approximation model. (Figures~\ref{fig:phaseplot_Halo0-0}, \ref{fig:phaseplot_Halo8-9}, and \ref{fig:gmf_h2f_radialprofile})
+	\item The Sobolev-like approximation also effect the timing of the reionization epoch in cosmological simulation, where it make the universe reionize much quicker than the prediction using the ray tracing model. (Figures~\ref{fig:neutralHfrac_map} and \ref{fig:neutralHfrac_evolution})
+\end{itemize}
+
+\textbf{MORE DISCUSSION ON THE IMPACT OF THE STUDY.}
 
 %% IMPORTANT! The old "\acknowledgment" command has be depreciated. It was
 %% not robust enough to handle our new dual anonymous review requirements and
@@ -564,7 +580,7 @@ The strong radiation in late reionization destroys H2 in both \textit{ray} and \
 %% 
 %% Also note that the akcnowlodgment environment does not support long amounts of text. If you have a lot of people and institutions to acknowledge, do not use this command. Instead, create a new \section{Acknowledgments}.
 \begin{acknowledgments}
-Acknowledgement: ---
+Acknowledgement: We would like to thank [insert Grant number] and CAPS fellowship. 
 \end{acknowledgments}
 
 %% To help institutions obtain information on the effectiveness of their 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2025.1.19)  17 FEB 2025 11:33
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2025.1.19)  19 FEB 2025 11:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -620,19 +620,19 @@ Class revtex4-1 Info: Overriding lineo.sty, restoring output routine, on input
 line 177.
 Class revtex4-1 Info: Reinvoke \linenumbers on input line 177.
 Class revtex4-1 Info: Overriding \@LN@LLerror on input line 177.
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 28
-7.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 26
+1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 287
+LaTeX Font Info:    Trying to load font information for U+msa on input line 261
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 287
+LaTeX Font Info:    Trying to load font information for U+msb on input line 261
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -642,51 +642,57 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 
 )
-[1]
-Underfull \hbox (badness 10000) in paragraph at lines 302--303
+[1] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
 
  []
 
 
-Underfull \hbox (badness 1845) in paragraph at lines 310--311
+Underfull \hbox (badness 1845) in paragraph at lines 311--312
 []\TU/lmr/m/n/10 We run and analyze outputs from a radiation-
  []
 
 
-Underfull \hbox (badness 1377) in paragraph at lines 310--311
+Underfull \hbox (badness 1377) in paragraph at lines 311--312
 \TU/lmr/m/n/10 hydrodynamic adaptive mesh refinement simulation
  []
 
-[2]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 324.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 324.
+(hyperref)                removing `math shift' on input line 325.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 324.
+(hyperref)                removing `subscript' on input line 325.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 325.
 
 [3]
 File: EarlyRe/fsh_comparison_ver2.png Graphic file (type bmp)
 <EarlyRe/fsh_comparison_ver2.png>
- [4] [5]
+ [4]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 360.
+
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 360.
+
+
+Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
+
+[5]
 File: EarlyRe/h2_frac_gasmass_distribution_EarlyRe_shinbad.png Graphic file (ty
 pe bmp)
 <EarlyRe/h2_frac_gasmass_distribution_EarlyRe_shinbad.png>
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+ [6]
 File: EarlyRe/stellarmass_totalmass_EarlyRe_starassignment.png Graphic file (ty
 pe bmp)
 <EarlyRe/stellarmass_totalmass_EarlyRe_starassignment.png>
 File: EarlyRe/number_of_halo_wstars.png Graphic file (type bmp)
 <EarlyRe/number_of_halo_wstars.png>
-[6] [7]
+ [7]
 File: EarlyRe/Halo0-0_property_comparison_Snapshot_211_Projection_x_ver1088.png
  Graphic file (type bmp)
 <EarlyRe/Halo0-0_property_comparison_Snapshot_211_Projection_x_ver1088.png>
@@ -699,53 +705,67 @@ File: EarlyRe/Halo8-9_property_comparison_Snapshot_211_Projection_x_ver1088.png
 File: EarlyRe/Halo8-9_property_evolution_comparison_ver1088.png Graphic file (t
 ype bmp)
 <EarlyRe/Halo8-9_property_evolution_comparison_ver1088.png>
-
-Underfull \hbox (badness 1226) in paragraph at lines 447--448
+ [8]
+Underfull \hbox (badness 1226) in paragraph at lines 448--449
 \TU/lmr/m/n/10 shielding modeling results in greater differences in
  []
 
-[8]
-File: EarlyRe/gmf_h2f_radialprofile_comparison.png Graphic file (type bmp)
-<EarlyRe/gmf_h2f_radialprofile_comparison.png>
+[9]
 File: EarlyRe/Galaxy_CGM_phaseplot_Halos_0-0_Snapshot_211_ver1088.png Graphic f
 ile (type bmp)
 <EarlyRe/Galaxy_CGM_phaseplot_Halos_0-0_Snapshot_211_ver1088.png>
-File: EarlyRe/Galaxy_CGM_H2phaseplot_Halos_0-0_Snapshot_211_ver1088.png Graphic
- file (type bmp)
-<EarlyRe/Galaxy_CGM_H2phaseplot_Halos_0-0_Snapshot_211_ver1088.png>
-File: EarlyRe/Galaxy_CGM_phaseplot_Halos_18-19_Snapshot_211_ver1088.png Graphic
- file (type bmp)
-<EarlyRe/Galaxy_CGM_phaseplot_Halos_18-19_Snapshot_211_ver1088.png>
-File: EarlyRe/Galaxy_CGM_H2phaseplot_Halos_18-19_Snapshot_211_ver1088.png Graph
-ic file (type bmp)
-<EarlyRe/Galaxy_CGM_H2phaseplot_Halos_18-19_Snapshot_211_ver1088.png>
+File: EarlyRe/Galaxy_CGM_partialH2phaseplot_Halos_0-0_Snapshot_211_ver1088.png 
+Graphic file (type bmp)
+<EarlyRe/Galaxy_CGM_partialH2phaseplot_Halos_0-0_Snapshot_211_ver1088.png>
+File: EarlyRe/Galaxy_CGM_phaseplot_Halos_8-9_Snapshot_211_ver1088.png Graphic f
+ile (type bmp)
+<EarlyRe/Galaxy_CGM_phaseplot_Halos_8-9_Snapshot_211_ver1088.png>
+File: EarlyRe/Galaxy_CGM_partialH2phaseplot_Halos_8-9_Snapshot_211_ver1088.png 
+Graphic file (type bmp)
+<EarlyRe/Galaxy_CGM_partialH2phaseplot_Halos_8-9_Snapshot_211_ver1088.png>
+ [10] [11]
+File: EarlyRe/gmf_h2f_radialprofile_comparison.png Graphic file (type bmp)
+<EarlyRe/gmf_h2f_radialprofile_comparison.png>
+ [12]
 File: EarlyRe/gas_surface_density_multiple_ver1088_ver2.png Graphic file (type 
 bmp)
 <EarlyRe/gas_surface_density_multiple_ver1088_ver2.png>
- [9] [10] [11]
-
-LaTeX Warning: A float is stuck (cannot be placed) on input line 492.
-
-[12]
 File: EarlyRe/neutralHfraction_comparison_multiple.png Graphic file (type bmp)
 <EarlyRe/neutralHfraction_comparison_multiple.png>
 File: EarlyRe/neutralHfraction_evolution.png Graphic file (type bmp)
 <EarlyRe/neutralHfraction_evolution.png>
- (./sample631.bbl [13] [14]) [15]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 621.
+ [13] [14]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 564.
+
+[15]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 564.
+
+
+Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
+
+
+Underfull \hbox (badness 2856) in paragraph at lines 566--567
+[]\TU/lmr/m/n/10 The Sobolev-like approximation for $\OML/cmm/m/it/10 H[]$ \TU/
+lmr/m/n/10 self-
+ []
+
+(./sample631.bbl [16]) [17]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 637.
  (./sample631.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 621.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 621.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 637.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 637.
 Package rerunfilecheck Info: File `sample631.out' has not changed.
-(rerunfilecheck)             Checksum: C2279186C4D6156C9C25F1483C636226;1103.
+(rerunfilecheck)             Checksum: 3A9F876B49AA32F46E2786E2227352C2;1130.
  ) 
 Here is how much of TeX's memory you used:
- 14027 strings out of 481772
- 202258 string characters out of 5936451
- 566379 words of memory out of 5000000
- 30790 multiletter control sequences out of 15000+600000
+ 14030 strings out of 481772
+ 202367 string characters out of 5936451
+ 606068 words of memory out of 5000000
+ 30793 multiletter control sequences out of 15000+600000
  540424 words of font info for 76 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,12n,45p,2781b,564s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,45p,3066b,516s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sample631.pdf (15 pages).
+Output written on sample631.pdf (17 pages).
